@@ -46,6 +46,7 @@ ${data.description}
 - [Usage](#usage)${renderLicenseLink(data.license)}
 - [Contribute](#how-to-contribute)
 - [Tests](#tests)
+- [Questions](#questions)
 
 
 ## Installation
@@ -63,6 +64,12 @@ ${data.contribute}
 ## Tests
 
 ${data.testing}
+
+## Questions
+
+If you have any other questions my contact info is linked below.
+- [My Github](https://github.com/${data.github})
+- [Email me](mailto:${data.email})
 `;
 }
 

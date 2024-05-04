@@ -1,4 +1,5 @@
 # ignored files
 node_modules/
+README/
 .DS_Store
 package-lock.json
