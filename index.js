@@ -27,15 +27,18 @@ const inquirer = require('inquirer');
 const questions = [
     'Application title:',
     'App Description:',
-    'Installation instructions: ',
+    'Installation instructions:',
     'How to use the app:',
+    'Select a license for your app:',
     'How to contribute to this app:',
-    'How to test this app:'
+    'How to test this app:',
+    'Github username:',
+    'Email:'
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(`${fileName}-README.md`, data, err => {
+    fs.writeFile(`./README/${fileName}-README.md`, data, err => {
         err ? console.error(err) : console.log('Successfully generated README.md')
     })
 }
@@ -64,14 +67,30 @@ function init() {
             name: 'usage'
         },
         {
-            type: 'input',
+            type: 'list',
             message: `${questions[4]}`,
-            name: 'contribute'
+            choices: ['MIT', 'Apache', 'GPL', 'none'],
+            name: 'license'
         },
         {
             type: 'input',
             message: `${questions[5]}`,
+            name: 'contribute'
+        },
+        {
+            type: 'input',
+            message: `${questions[6]}`,
             name: 'testing'
+        },
+        {
+            type: 'input',
+            message: `${questions[7]}`,
+            name: 'github'
+        },
+        {
+            type: 'input',
+            message: `${questions[8]}`,
+            name: 'email'
         }
     ])
     .then(answers => {
